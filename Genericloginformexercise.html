@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        
+        function check(){
+            var x = document.getElementById("text").value;
+            var y = document.getElementById("password").value;
+            var span1 = document.getElementById("span1");
+            var span2 = document.getElementById("span2");
+            span1.innerHTML=" ";
+            span2.innerHTML=" ";
+            if(x.length == 0){
+                span1.innerHTML="<font color=red> Please Enter your username </font>"
+                return false;
+            }
+            if(y.length == 0){
+                span2.innerHTML="<font color=red> Please Enter your Password </font>";
+                return false;
+            }
+            else if(y.charAt(0)!="A"){
+                span2.innerHTML="<font color=red> Password should start with A </font>";
+                return false;
+            }
+            else if(y.length<6 || y.length>12){
+                    span2.innerHTML="<font color=red> Password must be between 6 and 12 characters </font>";
+                    return false;
+            }
+        }
+        
+        
+        </script>
+    </head>
+    <body>
+        <h1 align="center">Login Form</h1>
+        
+            <form align="center" action="link.html" onsubmit="return check()">
+            Username <input type="text" name="text" id="text"> <span id="span1"></span><br/> <br/> <br/> <br/>
+            Password <input type="password" name="password" id="password"> <span id="span2"></span><br/> <br/> <br/> <br/>
+            <input type="submit" value="Login" >
+            </form>
+       
+    </body>
+</html>
